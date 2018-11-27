@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import NavDrawer from '../components/NavDrawer';
+
+injectTapEventPlugin()
 
 class Template extends Component{
 
 	render(){
 		return(
-			<div>
-				<header>
-					<h1>TicTacToe</h1>
-				</header>
-				<main>
-					{ this.props.children }
-				</main>
-			</div>
+
+			<MuiThemeProvider>
+				
+				<div>
+
+				<NavDrawer />
+					
+					<main>
+						{ this.props.children }
+					</main>
+				</div>
+
+			</MuiThemeProvider>
+
+			
 		);
 	}
 }
